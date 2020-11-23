@@ -1,0 +1,13 @@
+C:\Users\abel4\source\repos\OfficeInterceptor\OfficeInterceptor\bin\Release\OfficeInterceptor.dll
+C:\Users\abel4\source\repos\OfficeInterceptor\OfficeInterceptor\bin\Release\OfficeInterceptor.pdb
+C:\Users\abel4\source\repos\OfficeInterceptor\OfficeInterceptor\bin\Release\ClosedXML.dll
+C:\Users\abel4\source\repos\OfficeInterceptor\OfficeInterceptor\bin\Release\DocumentFormat.OpenXml.dll
+C:\Users\abel4\source\repos\OfficeInterceptor\OfficeInterceptor\bin\Release\ExcelNumberFormat.dll
+C:\Users\abel4\source\repos\OfficeInterceptor\OfficeInterceptor\bin\Release\ClosedXML.pdb
+C:\Users\abel4\source\repos\OfficeInterceptor\OfficeInterceptor\bin\Release\ClosedXML.xml
+C:\Users\abel4\source\repos\OfficeInterceptor\OfficeInterceptor\bin\Release\DocumentFormat.OpenXml.xml
+C:\Users\abel4\source\repos\OfficeInterceptor\OfficeInterceptor\bin\Release\ExcelNumberFormat.xml
+C:\Users\abel4\source\repos\OfficeInterceptor\OfficeInterceptor\obj\Release\OfficeInterceptor.csproj.CoreCompileInputs.cache
+C:\Users\abel4\source\repos\OfficeInterceptor\OfficeInterceptor\obj\Release\OfficeInterceptor.csproj.CopyComplete
+C:\Users\abel4\source\repos\OfficeInterceptor\OfficeInterceptor\obj\Release\OfficeInterceptor.dll
+C:\Users\abel4\source\repos\OfficeInterceptor\OfficeInterceptor\obj\Release\OfficeInterceptor.pdb
