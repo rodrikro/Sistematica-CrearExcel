@@ -173,7 +173,6 @@
             this.txt_NombreMedico.Name = "txt_NombreMedico";
             this.txt_NombreMedico.Size = new System.Drawing.Size(338, 20);
             this.txt_NombreMedico.TabIndex = 15;
-            this.txt_NombreMedico.Text = "Kassandra Monarrez";
             // 
             // label3
             // 

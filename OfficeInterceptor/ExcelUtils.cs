@@ -39,46 +39,60 @@ namespace OfficeInterceptor
 
             InfoDB info = new InfoDB(srcDB, pwdDB);
 
+            List<PacienteClass> LPacientes = new List<PacienteClass>();
+            List<List<DataTable>> listaResultadosPorPaciente = new List<List<DataTable>>();
+
             List<DataTable> listaDTResultados = new List<System.Data.DataTable>();
-            PacienteClass paciente = new PacienteClass();
 
             try
             {
+                string query = string.Empty;
+                int top = 3;
+
+                //0. Obtener lista de pacientes consultados
+
+                //1. Obtener columnas de la tabla "DatosPaciente"
+                List<string> listaColumnas = new List<string>();
+                listaColumnas = info.GetColumns("DatosPaciente");
+
+
+                //2. Generar query de la tabla
+                string numeroExpedienteStr = (numeroExpediente == 0) ? string.Empty : numeroExpediente.ToString();
+                query = info.GeneraQuery("DatosPaciente", listaColumnas.ToArray(), numeroExpedienteStr);
+
+                //3. Obtener los pacientes
+                LPacientes = info.GetPacientes(query);
+
+
                 //Paso 1. Obtener Nombres de tablas
                 List<string> listaTablas = new List<string>();
                 listaTablas = info.GetTables();
 
-                //Paso 2. Renombra tablas para presentar en excel
-                //string[,] renombreTablas = RenombraTablas(listaTablas);
-
-                //Paso 3. Recorrer las tablas
-                foreach (string tableName in listaTablas)
+                //Recorre los pacientes
+                foreach (PacienteClass paciente in LPacientes)
                 {
-                    //Paso 4. Al Recorrer Tablas obtener sus columnas
-                    List<string> listaColumnas = new List<string>();
-                    listaColumnas = info.GetColumns(tableName);
+                    listaDTResultados = new List<DataTable>();
 
-                    //Paso 5. Construir query por cada tabla usando el numero de expediente
-                    string query = info.GeneraQuery(tableName, listaColumnas.ToArray(), numeroExpediente.ToString());
-
-
-
-                    //Paso 6. Obtener datos por cada tabla
-                    System.Data.DataTable dt = info.GetDatos(query);
-                    listaDTResultados.Add(dt);
-
-                    //Paso 6.1 Obtiene datos de paciente
-                    if (tableName.Contains("DatosPaciente"))
+                    //Paso 3. Recorrer las tablas
+                    foreach (string tableName in listaTablas)
                     {
-                        paciente = info.GetPaciente(query);
+                        //Paso 4. Al Recorrer Tablas obtener sus columnas
+                        listaColumnas = new List<string>();
+                        listaColumnas = info.GetColumns(tableName);
+
+                        //Paso 5. Construir query por cada tabla usando el numero de expediente
+                        query = info.GeneraQuery(tableName, listaColumnas.ToArray(), paciente.NumeroExpediente);
+
+                        //Paso 6. Obtener datos por cada tabla
+                        System.Data.DataTable dt = info.GetDatos(query);
+                        listaDTResultados.Add(dt);
                     }
 
+                    listaResultadosPorPaciente.Add(listaDTResultados);
                 }
 
-
-                //Paso 6. Construye el excel y obtiene la ruta
-                //rutaExcel = ConstruyeExcel(listaDTResultados, listaTablas,numeroExpediente, renombreTablas);
-                rutaExcel = ConstruyeExcel(listaDTResultados, listaTablas, numeroExpediente, paciente, nombreMedico);
+                //Paso 7. Construye el excel y obtiene la ruta
+                rutaExcel = ConstruyeExcel(listaResultadosPorPaciente, listaTablas, numeroExpediente, LPacientes, nombreMedico);
 
             }
             catch (Exception ex)
@@ -89,12 +103,20 @@ namespace OfficeInterceptor
             return rutaExcel;
         }
 
-        private string ConstruyeExcel(List<DataTable> dtResultados, List<string> listaTablas, int numeroExpediente, 
-            PacienteClass paciente, string nombreMedico)
+        private string ConstruyeExcel(List<List<DataTable>> listaResultadosPorPaciente, List<string> listaTablas, int numeroExpediente, 
+            List<PacienteClass> LPacientes, string nombreMedico)
         {
+            PacienteClass [] arrayPacientes = LPacientes.ToArray();
+            var arrayResultados = listaResultadosPorPaciente.ToArray();
+            //List<System.Data.DataTable>[10]
+
             //string paciente = "Exp " + numeroExpediente.ToString();
-            string fecha = DateTime.Now.Year.ToString() + "-" + DateTime.Now.Month.ToString() + "-" + DateTime.Now.Day.ToString();
-            string nombreArchivo = "Exp " + numeroExpediente + " " + paciente.Nombre + "_" + fecha;
+            string fecha = DateTime.Now.Year.ToString() + "-" + DateTime.Now.Month.ToString("00") + "-" + DateTime.Now.Day.ToString("00");
+
+            string nombreArchivo = "Exp " + numeroExpediente + " " + arrayPacientes[0].Nombre + "_" + fecha;
+
+            nombreArchivo = (arrayPacientes.Length>1)? "Expedientes_" + fecha : nombreArchivo;
+
             string pathFile = Environment.CurrentDirectory + @"\" + nombreArchivo +".xlsx";
             string rutaExcel = "ConstruyeExcel";
 
@@ -108,82 +130,116 @@ namespace OfficeInterceptor
                 {
                     //Crea hoja de trabajo en documento de excel
                     var hoja = workbook.Worksheets.Add("Reporte");
-
+                    hoja.RowHeight = 20;
                     //Titulo 
                     hoja.Cell(row, 3).Value = "EXPEDIENTE CLÍNICO";
                     hoja.Cell(row, 3).Style.Font.Bold = true;
                     hoja.Cell(row, 3).Style.Font.FontSize = 16;
 
-                    row = row + 2;
-
-                    //Datos del paciente
-                    hoja.Cell(row, 1).Value = "PACIENTE: ";
-                    hoja.Cell(row, 1).Style.Font.FontSize = 14;
-                    hoja.Cell(row, 3).Value = paciente.Nombre;
-                    hoja.Cell(row, 3).Style.Font.FontSize = 14;
-                    hoja.Cell(row, 8).Value = "EXPEDIENTE: ";
-                    hoja.Cell(row, 8).Style.Font.FontSize = 14;
-                    hoja.Cell(row, 10).Value = paciente.NumeroExpediente;
-                    hoja.Cell(row, 10).Style.Font.FontSize = 14;
-
-                    row = row + 1;
-                    //Datos del Medico
-                    hoja.Cell(row, 1).Value = "MEDICO: ";
-                    hoja.Cell(row, 1).Style.Font.FontSize = 14;
-                    hoja.Cell(row, 3).Value = nombreMedico;
-                    hoja.Cell(row, 3).Style.Font.FontSize = 14;
-
-                    //Fecha
-                    hoja.Cell(row, 8).Value = "FECHA: ";
-                    hoja.Cell(row, 8).Style.Font.FontSize = 14;
-                    DateTime fechaActual = DateTime.Now;
-                    string fechaValue = fechaActual.ToString("dd MMM yyyy");
-                    hoja.Cell(row, 10).Value = fechaValue;
-                    hoja.Cell(row, 10).Style.Font.FontSize = 14;
-
-                    //Ayuda para excel
-                    row = row + 1;
-
-                    //Contador para nombre de tablas
-                    int contadorNombreTablas = 0;
-                    foreach (DataTable dt in dtResultados)
+                    row++;
+                    row++;
+                    for (int i = 0; i < arrayPacientes.Length; i++)
                     {
+                        
+                        //Datos del paciente
+                        hoja.Cell(row, 1).Value = "PACIENTE: ";
+                        hoja.Cell(row, 1).Style.Font.FontSize = 14;
+                        hoja.Cell(row, 3).Value = arrayPacientes[i].Nombre;
+                        hoja.Cell(row, 3).Style.Font.FontSize = 14;
+                        hoja.Cell(row, 3).Style.Fill.BackgroundColor = XLColor.Green;
+                        hoja.Cell(row, 3).Style.Font.FontColor = XLColor.White;
+
+                        hoja.Cell(row, 8).Value = "EXPEDIENTE: ";
+                        hoja.Cell(row, 8).Style.Font.FontSize = 14;
+                        hoja.Cell(row, 10).Value = arrayPacientes[i].NumeroExpediente;
+                        hoja.Cell(row, 10).Style.Font.FontSize = 14;
+                        hoja.Cell(row, 10).Style.Fill.BackgroundColor = XLColor.Green;
+                        hoja.Cell(row, 10).Style.Font.FontColor = XLColor.White;
+
+                        row++;
+                        //Datos del Medico
+                        hoja.Cell(row, 1).Value = "MEDICO: ";
+                        hoja.Cell(row, 1).Style.Font.FontSize = 14;
+                        hoja.Cell(row, 3).Value = nombreMedico;
+                        hoja.Cell(row, 3).Style.Font.FontSize = 14;
+
+                        //Fecha
+                        hoja.Cell(row, 8).Value = "FECHA: ";
+                        hoja.Cell(row, 8).Style.Font.FontSize = 14;
+                        DateTime fechaActual = DateTime.Now;
+                        string fechaValue = fechaActual.ToString("dd MMM yyyy");
+                        hoja.Cell(row, 10).Value = fechaValue;
+                        hoja.Cell(row, 10).Style.Font.FontSize = 14;
+
+                        row++;
+
+                        //Inicia la escritura de las tablas
+                        int contadorNombreTablas = 0;
+
+                        int colNombreTabla = 1;
+                        int colTitulosTabla = 1;
+                        int colDatosTabla = 1;
+
+                        int rowNombreTabla = 0;
+                        int rowTitulosTabla = 0;
+                        int rowDatosPaciente = 0;
+
+
+                        //Titulos de tabla
                         row = row + 1;
-                        //string nombreTabla = listaTablas.ToArray()[contadorNombreTablas];
-                        string nombreTablaActual = listaTablas.ToArray()[contadorNombreTablas];
-
-                        string nombreTabla = RenombraTablas(listaTablas, nombreTablaActual);
-
-                        hoja.Cell(row, 1).Value = "" + nombreTabla +": ";
-                        hoja.Cell(row, 1).Style.Fill.BackgroundColor = XLColor.Orange;
-                        hoja.Cell(row, 1).Style.Font.FontColor = XLColor.White;
-                        hoja.Cell(row, 1).Style.Font.Bold = true;
+                        rowNombreTabla = row;
 
                         //Aumenta row para poner las columnas
                         row = row + 1;
-
-                        //Obtiene las columnas de la tabla
-                        for (int i = 1; i <= dt.Columns.Count; i++)
-                        {
-                            string colTitulo = dt.Columns[(i - 1)].ToString();
-                            hoja.Cell(row, i).Value = colTitulo;
-
-                            maximRow = (maximRow < row) ? row : maximRow;
-                            maximCol = (maximCol < i) ? i : maximCol;
-                        }
+                        rowTitulosTabla = row;
 
                         //Aumenta row para poner los datos
                         row = row + 1;
-                        for (int i = 1; i <= dt.Columns.Count; i++)
-                        {
-                            string valor = dt.Rows[0][(i - 1)].ToString();
-                            hoja.Cell(row, i).Value = valor;
-                        }
+                        rowDatosPaciente = row;
 
-                        //Aumenta row para poner otra tabla
-                        contadorNombreTablas++;
+                        foreach (DataTable dt in arrayResultados[i])
+                        {
+                            string nombreTablaActual = listaTablas.ToArray()[contadorNombreTablas];
+                            string nombreTabla = RenombraTablas(listaTablas, nombreTablaActual);
+
+                            hoja.Cell(rowNombreTabla, colNombreTabla).Value = "" + nombreTabla + ": ";
+                            hoja.Cell(rowNombreTabla, colNombreTabla).Style.Fill.BackgroundColor = XLColor.Orange;
+                            hoja.Cell(rowNombreTabla, colNombreTabla).Style.Font.FontColor = XLColor.White;
+                            hoja.Cell(rowNombreTabla, colNombreTabla).Style.Font.Bold = true;
+
+                            for (int t = 1; t <= dt.Columns.Count; t++)
+                            {
+                                string colTitulo = dt.Columns[(t - 1)].ToString();
+                                hoja.Cell(rowTitulosTabla, colTitulosTabla).Value = colTitulo;
+
+                                colNombreTabla++;
+                                colTitulosTabla++;                                
+                            }
+
+                            for (int d = 1; d <= dt.Columns.Count; d++)
+                            {
+                                string valor = dt.Rows[0][(d - 1)].ToString();
+                                hoja.Cell(rowDatosPaciente, colDatosTabla).Value = valor;
+                                
+                                colDatosTabla++;
+                            }
+
+                            //--------------------------------------------------------------------------
+                            //Aumenta row para poner otra tabla
+                            contadorNombreTablas++;
+
+                        }
+                        //--------------------------------------------------------------------------
+                        colNombreTabla = 1;
+                        colTitulosTabla = 1;
+                        colDatosTabla = 1;
+                        contadorNombreTablas = 0;
                         row = row + 2;
                     }
+
+
+
+                    //Termina de construir el excel
                     workbook.SaveAs(pathFile);
 
                 }
@@ -198,11 +254,6 @@ namespace OfficeInterceptor
             finally { }
 
             return rutaExcel;
-        }
-
-        private void GetPaciente()
-        {
-
         }
 
 

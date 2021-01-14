@@ -152,10 +152,13 @@ namespace Tester
             ExcelUtils excel = new ExcelUtils();
             string mensaje = "";
             string rutaExcel = "";
+            string numeroExpediente = "0";
 
             try
             {
-                rutaExcel = excel.GeneraExcel( int.Parse(txt_numeroExpediente.Text) , txt_NombreMedico.Text,
+                numeroExpediente = (string.IsNullOrEmpty(txt_numeroExpediente.Text)) ? "0" : txt_numeroExpediente.Text;
+
+                rutaExcel = excel.GeneraExcel( int.Parse(numeroExpediente) , txt_NombreMedico.Text,
                     out mensaje,"","");
 
                 txt_respuesta.Text = rutaExcel;

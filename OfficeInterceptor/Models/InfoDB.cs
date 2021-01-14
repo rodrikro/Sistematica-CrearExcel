@@ -159,10 +159,11 @@ namespace OfficeInterceptor.Models
             return dtResultado;
         }
 
-        public PacienteClass GetPaciente(string query)
+        public List<PacienteClass> GetPacientes(string query)
         {
             DataTable dtResultado = new DataTable();
             DataSet dsResultado = new DataSet();
+            List<PacienteClass> lista = new List<PacienteClass>();
 
             PacienteClass O = new PacienteClass();
 
@@ -173,7 +174,7 @@ namespace OfficeInterceptor.Models
 
                 if (!ok)
                 {
-                    return O;
+                    return lista;
                 }
 
 
@@ -194,12 +195,9 @@ namespace OfficeInterceptor.Models
                         O.NumeroExpediente = item["NumeroExpediente"].ToString();
                         O.NSS = item["NSS"].ToString();
 
+                        lista.Add(O);
                     }
                 }
-
-
-
-
             }
             catch (Exception ex)
             {
@@ -210,11 +208,11 @@ namespace OfficeInterceptor.Models
                 this._db.Cerrar();
             }
 
-            return O;
+            return lista;
         }
 
 
-        public string GeneraQuery(string tabla, string [] columnas, string numeroExpediente)
+        public string GeneraQuery(string tabla, string [] columnas, string numeroExpediente, int top = 0)
         {
             string query = "";
             string strColumnas = "";
@@ -224,10 +222,21 @@ namespace OfficeInterceptor.Models
                 strColumnas += col + ",";
             }
 
+            if (top == 0)
+            {
+                query += " SELECT " + strColumnas.TrimEnd(',');
+            }
+            else
+            {
+                query += " SELECT TOP "+top.ToString() + " " + strColumnas.TrimEnd(',');
+            }
 
-            query += " SELECT " + strColumnas.TrimEnd(',');
+
             query += " FROM " + tabla;
-            query += " WHERE NumeroExpediente = "+numeroExpediente;
+            if (!string.IsNullOrEmpty(numeroExpediente) || numeroExpediente == "0")
+            {
+                query += " WHERE NumeroExpediente = "+numeroExpediente;
+            }
 
             return query;
         }

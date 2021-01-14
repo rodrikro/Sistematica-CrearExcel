@@ -12,3 +12,17 @@ C:\Users\abel4\source\repos\OfficeInterceptor\OfficeInterceptor\bin\Debug\Docume
 C:\Users\abel4\source\repos\OfficeInterceptor\OfficeInterceptor\bin\Debug\ExcelNumberFormat.xml
 C:\Users\abel4\source\repos\OfficeInterceptor\OfficeInterceptor\obj\Debug\OfficeInterceptor.csproj.CopyComplete
 C:\Users\abel4\source\repos\OfficeInterceptor\OfficeInterceptor\obj\Debug\OfficeInterceptor.csprojAssemblyReference.cache
+C:\Users\Rodrigo-MK\Documents\Repos\system\Sistematica-CrearExcel\OfficeInterceptor\bin\Debug\OfficeInterceptor.dll
+C:\Users\Rodrigo-MK\Documents\Repos\system\Sistematica-CrearExcel\OfficeInterceptor\bin\Debug\OfficeInterceptor.pdb
+C:\Users\Rodrigo-MK\Documents\Repos\system\Sistematica-CrearExcel\OfficeInterceptor\bin\Debug\ClosedXML.dll
+C:\Users\Rodrigo-MK\Documents\Repos\system\Sistematica-CrearExcel\OfficeInterceptor\bin\Debug\DocumentFormat.OpenXml.dll
+C:\Users\Rodrigo-MK\Documents\Repos\system\Sistematica-CrearExcel\OfficeInterceptor\bin\Debug\ExcelNumberFormat.dll
+C:\Users\Rodrigo-MK\Documents\Repos\system\Sistematica-CrearExcel\OfficeInterceptor\bin\Debug\ClosedXML.pdb
+C:\Users\Rodrigo-MK\Documents\Repos\system\Sistematica-CrearExcel\OfficeInterceptor\bin\Debug\ClosedXML.xml
+C:\Users\Rodrigo-MK\Documents\Repos\system\Sistematica-CrearExcel\OfficeInterceptor\bin\Debug\DocumentFormat.OpenXml.xml
+C:\Users\Rodrigo-MK\Documents\Repos\system\Sistematica-CrearExcel\OfficeInterceptor\bin\Debug\ExcelNumberFormat.xml
+C:\Users\Rodrigo-MK\Documents\Repos\system\Sistematica-CrearExcel\OfficeInterceptor\obj\Debug\OfficeInterceptor.csproj.CoreCompileInputs.cache
+C:\Users\Rodrigo-MK\Documents\Repos\system\Sistematica-CrearExcel\OfficeInterceptor\obj\Debug\OfficeInterceptor.csproj.CopyComplete
+C:\Users\Rodrigo-MK\Documents\Repos\system\Sistematica-CrearExcel\OfficeInterceptor\obj\Debug\OfficeInterceptor.dll
+C:\Users\Rodrigo-MK\Documents\Repos\system\Sistematica-CrearExcel\OfficeInterceptor\obj\Debug\OfficeInterceptor.pdb
+C:\Users\Rodrigo-MK\Documents\Repos\system\Sistematica-CrearExcel\OfficeInterceptor\obj\Debug\OfficeInterceptor.csprojAssemblyReference.cache
