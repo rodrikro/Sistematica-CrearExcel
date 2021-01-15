@@ -11,3 +11,17 @@ C:\Users\abel4\source\repos\OfficeInterceptor\OfficeInterceptor\obj\Release\Offi
 C:\Users\abel4\source\repos\OfficeInterceptor\OfficeInterceptor\obj\Release\OfficeInterceptor.csproj.CopyComplete
 C:\Users\abel4\source\repos\OfficeInterceptor\OfficeInterceptor\obj\Release\OfficeInterceptor.dll
 C:\Users\abel4\source\repos\OfficeInterceptor\OfficeInterceptor\obj\Release\OfficeInterceptor.pdb
+C:\Users\Rodrigo-MK\Documents\Repos\system\Sistematica-CrearExcel\OfficeInterceptor\bin\Release\OfficeInterceptor.dll
+C:\Users\Rodrigo-MK\Documents\Repos\system\Sistematica-CrearExcel\OfficeInterceptor\bin\Release\OfficeInterceptor.pdb
+C:\Users\Rodrigo-MK\Documents\Repos\system\Sistematica-CrearExcel\OfficeInterceptor\bin\Release\ClosedXML.dll
+C:\Users\Rodrigo-MK\Documents\Repos\system\Sistematica-CrearExcel\OfficeInterceptor\bin\Release\DocumentFormat.OpenXml.dll
+C:\Users\Rodrigo-MK\Documents\Repos\system\Sistematica-CrearExcel\OfficeInterceptor\bin\Release\ExcelNumberFormat.dll
+C:\Users\Rodrigo-MK\Documents\Repos\system\Sistematica-CrearExcel\OfficeInterceptor\bin\Release\ClosedXML.pdb
+C:\Users\Rodrigo-MK\Documents\Repos\system\Sistematica-CrearExcel\OfficeInterceptor\bin\Release\ClosedXML.xml
+C:\Users\Rodrigo-MK\Documents\Repos\system\Sistematica-CrearExcel\OfficeInterceptor\bin\Release\DocumentFormat.OpenXml.xml
+C:\Users\Rodrigo-MK\Documents\Repos\system\Sistematica-CrearExcel\OfficeInterceptor\bin\Release\ExcelNumberFormat.xml
+C:\Users\Rodrigo-MK\Documents\Repos\system\Sistematica-CrearExcel\OfficeInterceptor\obj\Release\OfficeInterceptor.csprojAssemblyReference.cache
+C:\Users\Rodrigo-MK\Documents\Repos\system\Sistematica-CrearExcel\OfficeInterceptor\obj\Release\OfficeInterceptor.csproj.CoreCompileInputs.cache
+C:\Users\Rodrigo-MK\Documents\Repos\system\Sistematica-CrearExcel\OfficeInterceptor\obj\Release\OfficeInterceptor.csproj.CopyComplete
+C:\Users\Rodrigo-MK\Documents\Repos\system\Sistematica-CrearExcel\OfficeInterceptor\obj\Release\OfficeInterceptor.dll
+C:\Users\Rodrigo-MK\Documents\Repos\system\Sistematica-CrearExcel\OfficeInterceptor\obj\Release\OfficeInterceptor.pdb
