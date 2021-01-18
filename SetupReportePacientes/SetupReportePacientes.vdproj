@@ -15,7 +15,7 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_50D23C32628B475E92CF01DD16AB1EA9"
+        "MsmKey" = "8:_2FA5607C2CEB4E47AA08F749932FA65E"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -28,13 +28,13 @@
         "Entry"
         {
         "MsmKey" = "8:_6783F29741E3EC8D7773D3A440E42F5E"
-        "OwnerKey" = "8:_50D23C32628B475E92CF01DD16AB1EA9"
+        "OwnerKey" = "8:_2FA5607C2CEB4E47AA08F749932FA65E"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_A34492027A5BD260BE725603F5BC9A9F"
-        "OwnerKey" = "8:_50D23C32628B475E92CF01DD16AB1EA9"
+        "OwnerKey" = "8:_2FA5607C2CEB4E47AA08F749932FA65E"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -46,7 +46,7 @@
         "Entry"
         {
         "MsmKey" = "8:_BB61DF14D2FFCE7C9B5B9531FFF64653"
-        "OwnerKey" = "8:_50D23C32628B475E92CF01DD16AB1EA9"
+        "OwnerKey" = "8:_2FA5607C2CEB4E47AA08F749932FA65E"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -58,7 +58,7 @@
         "Entry"
         {
         "MsmKey" = "8:_EB6FF3FCC2CE86A4467E4D018EC6DA84"
-        "OwnerKey" = "8:_50D23C32628B475E92CF01DD16AB1EA9"
+        "OwnerKey" = "8:_2FA5607C2CEB4E47AA08F749932FA65E"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -70,7 +70,7 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_50D23C32628B475E92CF01DD16AB1EA9"
+        "OwnerKey" = "8:_2FA5607C2CEB4E47AA08F749932FA65E"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -109,6 +109,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
         "Release"
         {
@@ -125,6 +133,22 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
+            }
         }
     }
     "Deployable"
@@ -345,15 +369,15 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Reporte Pacientes"
-        "ProductCode" = "8:{A4A19D86-1F60-4601-8987-6FAD3C21DCBF}"
-        "PackageCode" = "8:{F7ACB2C8-0E9D-441B-889D-612395A4709A}"
+        "ProductCode" = "8:{66C38B1A-C1E0-475D-834B-4E737D43BDF1}"
+        "PackageCode" = "8:{8E91DCAD-6839-46D7-8165-79F749397A06}"
         "UpgradeCode" = "8:{03A706B5-38DF-461B-ABB8-B078ADCA1D6C}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:FALSE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
-        "ProductVersion" = "8:1.0.1"
+        "ProductVersion" = "8:1.11.21"
         "Manufacturer" = "8:Systematica"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
@@ -466,7 +490,7 @@
         }
         "Shortcut"
         {
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_2EC18C48338D469890F602C8006DC933"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_5CE7A370DCAF468BBFEAFA198D7CE7F5"
             {
             "Name" = "8:Reporte Pacientes"
             "Arguments" = "8:"
@@ -474,13 +498,13 @@
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
-            "Target" = "8:_50D23C32628B475E92CF01DD16AB1EA9"
-            "Folder" = "8:_E28DD2E985774B9B95D04C8BA0A92178"
+            "Target" = "8:_2FA5607C2CEB4E47AA08F749932FA65E"
+            "Folder" = "8:_03A77D05280A456FADBEF5F093FF2CD3"
             "WorkingFolder" = "8:_88BFB944F75B4CF48632859510080043"
             "Icon" = "8:"
             "Feature" = "8:"
             }
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_3DD319F0E0AE480DB7217F537ACEF166"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_F20941A30BCC402B80A1715CA898896E"
             {
             "Name" = "8:Reporte Pacientes"
             "Arguments" = "8:"
@@ -488,8 +512,8 @@
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
-            "Target" = "8:_50D23C32628B475E92CF01DD16AB1EA9"
-            "Folder" = "8:_03A77D05280A456FADBEF5F093FF2CD3"
+            "Target" = "8:_2FA5607C2CEB4E47AA08F749932FA65E"
+            "Folder" = "8:_E28DD2E985774B9B95D04C8BA0A92178"
             "WorkingFolder" = "8:_88BFB944F75B4CF48632859510080043"
             "Icon" = "8:"
             "Feature" = "8:"
@@ -893,7 +917,7 @@
         }
         "ProjectOutput"
         {
-            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_50D23C32628B475E92CF01DD16AB1EA9"
+            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_2FA5607C2CEB4E47AA08F749932FA65E"
             {
             "SourcePath" = "8:..\\Tester\\obj\\Release\\Tester.exe"
             "TargetName" = "8:"

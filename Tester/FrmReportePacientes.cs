@@ -30,6 +30,7 @@ namespace Tester
             {
                 this.Segundos = 0;
                 lbl_cargando.Visible = true;
+                btn_GenerarReporte.Enabled = false;
 
                 numeroExpediente = (string.IsNullOrEmpty(txt_NumeroExpediente.Text)) ? "0" : txt_NumeroExpediente.Text;
                 nombreMedico = (string.IsNullOrEmpty(txt_NombreMedico.Text)) ? string.Empty : txt_NombreMedico.Text;
@@ -54,6 +55,7 @@ namespace Tester
             finally 
             {
                 lbl_cargando.Visible = false;
+                btn_GenerarReporte.Enabled = true;
             }
             
             
