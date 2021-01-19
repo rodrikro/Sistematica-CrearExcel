@@ -64,8 +64,9 @@ namespace OfficeInterceptor.Models
                 }
                 catch (Exception ex2)
                 {
-                    msg = ex.Message;
+                    msg = ex2.Message;
                     ok = false;
+                    throw;
                 }
             }
 
