@@ -20,6 +20,11 @@ namespace Tester
 
         private void btn_GenerarReporte_Click(object sender, EventArgs e)
         {
+            GeneraReporte();
+        }
+
+        private void GeneraReporte()
+        {
             ExcelUtils excel = new ExcelUtils();
             string mensaje = "";
             string rutaExcel = "";
@@ -52,15 +57,12 @@ namespace Tester
             {
                 txt_Resultado.Text = ex.Message;
             }
-            finally 
+            finally
             {
                 lbl_cargando.Visible = false;
                 btn_GenerarReporte.Enabled = true;
             }
-            
-            
         }
-
         
         private void TextoLoading(int segundos) 
         {
@@ -107,6 +109,14 @@ namespace Tester
         {
             Form1 frm = new Form1();
             frm.Show();
+        }
+
+        private void txt_NumeroExpediente_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyValue ==13)
+            {
+                GeneraReporte();
+            }
         }
     }
 }

@@ -63,6 +63,7 @@ namespace Tester
             this.txt_NumeroExpediente.Size = new System.Drawing.Size(154, 32);
             this.txt_NumeroExpediente.TabIndex = 1;
             this.txt_NumeroExpediente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_NumeroExpediente.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txt_NumeroExpediente_KeyUp);
             // 
             // label1
             // 
