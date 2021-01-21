@@ -37,3 +37,4 @@ C:\Users\Rodrigo-MK\Documents\Repos\system\Sistematica-CrearExcel\Tester\obj\Deb
 C:\Users\Rodrigo-MK\Documents\Repos\system\Sistematica-CrearExcel\Tester\obj\Debug\Tester.csproj.CopyComplete
 C:\Users\Rodrigo-MK\Documents\Repos\system\Sistematica-CrearExcel\Tester\obj\Debug\Tester.exe
 C:\Users\Rodrigo-MK\Documents\Repos\system\Sistematica-CrearExcel\Tester\obj\Debug\Tester.pdb
+C:\Users\Rodrigo-MK\Documents\Repos\system\Sistematica-CrearExcel\Tester\bin\Debug\Tester.exe.config

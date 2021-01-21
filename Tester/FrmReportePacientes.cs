@@ -8,11 +8,15 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
+using System.Configuration;
+using System.Diagnostics;
+
 namespace Tester
 {
     public partial class FrmReportePacientes : Form
     {
         int Segundos = 0;
+        string _rutaExcel = string.Empty;
         public FrmReportePacientes()
         {
             InitializeComponent();
@@ -31,17 +35,31 @@ namespace Tester
             string numeroExpediente = "0";
             string nombreMedico = string.Empty;
 
+            string srcDB = "";
+            string pwdDB = "";
+
             try
             {
                 this.Segundos = 0;
                 lbl_cargando.Visible = true;
+                lbl_estatus.Text = "";
                 btn_GenerarReporte.Enabled = false;
+                btn_abrirReporte.Enabled = false;
 
                 numeroExpediente = (string.IsNullOrEmpty(txt_NumeroExpediente.Text)) ? "0" : txt_NumeroExpediente.Text;
                 nombreMedico = (string.IsNullOrEmpty(txt_NombreMedico.Text)) ? string.Empty : txt_NombreMedico.Text;
 
+
+                var appSettings = ConfigurationSettings.AppSettings;
+                string result = appSettings["srcDB"] ?? "C:/SF/CardioSys/CardioSys.mdb";
+
+                srcDB = result;
+
+
                 rutaExcel = excel.GeneraExcel(int.Parse(numeroExpediente), nombreMedico,
-                    out mensaje, "", "");
+                    out mensaje, srcDB, pwdDB);
+
+                this._rutaExcel = rutaExcel;
 
                 if (!string.IsNullOrEmpty(mensaje))
                 {
@@ -49,7 +67,13 @@ namespace Tester
                 }
                 else
                 {
+                    lbl_estatus.Text = "Reporte Generado en la ruta: ";
                     txt_Resultado.Text = rutaExcel;
+                    btn_abrirReporte.Enabled = true;
+                    AbrirArchivo(rutaExcel);
+                    
+
+
 
                 }
             }
@@ -58,12 +82,20 @@ namespace Tester
                 txt_Resultado.Text = ex.Message;
             }
             finally
-            {
+            {    
                 lbl_cargando.Visible = false;
                 btn_GenerarReporte.Enabled = true;
             }
         }
         
+        private void AbrirArchivo(string ruta)
+        {
+            //ProcessStartInfo startInfo = new ProcessStartInfo();
+            //startInfo.FileName = "EXCEL.EXE";
+            //startInfo.Arguments = f;
+            Process.Start(ruta);
+        }
+
         private void TextoLoading(int segundos) 
         {
             string texto = "";
@@ -117,6 +149,11 @@ namespace Tester
             {
                 GeneraReporte();
             }
+        }
+
+        private void btn_abrirReporte_Click(object sender, EventArgs e)
+        {
+            AbrirArchivo(this._rutaExcel);
         }
     }
 }

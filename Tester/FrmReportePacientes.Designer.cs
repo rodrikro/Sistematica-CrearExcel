@@ -40,6 +40,7 @@ namespace Tester
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.lbl_cargando = new System.Windows.Forms.Label();
             this.btn_Tester = new System.Windows.Forms.Button();
+            this.btn_abrirReporte = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn_GenerarReporte
@@ -47,9 +48,9 @@ namespace Tester
             this.btn_GenerarReporte.BackColor = System.Drawing.Color.Lime;
             this.btn_GenerarReporte.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_GenerarReporte.ForeColor = System.Drawing.Color.White;
-            this.btn_GenerarReporte.Location = new System.Drawing.Point(87, 200);
+            this.btn_GenerarReporte.Location = new System.Drawing.Point(17, 282);
             this.btn_GenerarReporte.Name = "btn_GenerarReporte";
-            this.btn_GenerarReporte.Size = new System.Drawing.Size(250, 35);
+            this.btn_GenerarReporte.Size = new System.Drawing.Size(192, 35);
             this.btn_GenerarReporte.TabIndex = 0;
             this.btn_GenerarReporte.Text = "Generar Reporte";
             this.btn_GenerarReporte.UseVisualStyleBackColor = false;
@@ -58,7 +59,7 @@ namespace Tester
             // txt_NumeroExpediente
             // 
             this.txt_NumeroExpediente.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_NumeroExpediente.Location = new System.Drawing.Point(139, 101);
+            this.txt_NumeroExpediente.Location = new System.Drawing.Point(129, 90);
             this.txt_NumeroExpediente.Name = "txt_NumeroExpediente";
             this.txt_NumeroExpediente.Size = new System.Drawing.Size(154, 32);
             this.txt_NumeroExpediente.TabIndex = 1;
@@ -77,23 +78,22 @@ namespace Tester
             // 
             // txt_Resultado
             // 
-            this.txt_Resultado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Resultado.Location = new System.Drawing.Point(12, 275);
+            this.txt_Resultado.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Resultado.Location = new System.Drawing.Point(17, 222);
             this.txt_Resultado.Multiline = true;
             this.txt_Resultado.Name = "txt_Resultado";
             this.txt_Resultado.ReadOnly = true;
-            this.txt_Resultado.Size = new System.Drawing.Size(411, 119);
+            this.txt_Resultado.Size = new System.Drawing.Size(373, 54);
             this.txt_Resultado.TabIndex = 3;
             // 
             // lbl_estatus
             // 
             this.lbl_estatus.AutoSize = true;
             this.lbl_estatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_estatus.Location = new System.Drawing.Point(12, 246);
+            this.lbl_estatus.Location = new System.Drawing.Point(13, 199);
             this.lbl_estatus.Name = "lbl_estatus";
-            this.lbl_estatus.Size = new System.Drawing.Size(68, 20);
+            this.lbl_estatus.Size = new System.Drawing.Size(0, 20);
             this.lbl_estatus.TabIndex = 4;
-            this.lbl_estatus.Text = "Estatus:";
             // 
             // txt_NombreMedico
             // 
@@ -125,7 +125,7 @@ namespace Tester
             // 
             this.lbl_cargando.AutoSize = true;
             this.lbl_cargando.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_cargando.Location = new System.Drawing.Point(172, 249);
+            this.lbl_cargando.Location = new System.Drawing.Point(158, 177);
             this.lbl_cargando.Name = "lbl_cargando";
             this.lbl_cargando.Size = new System.Drawing.Size(94, 17);
             this.lbl_cargando.TabIndex = 7;
@@ -134,7 +134,7 @@ namespace Tester
             // 
             // btn_Tester
             // 
-            this.btn_Tester.Location = new System.Drawing.Point(348, 12);
+            this.btn_Tester.Location = new System.Drawing.Point(315, 12);
             this.btn_Tester.Name = "btn_Tester";
             this.btn_Tester.Size = new System.Drawing.Size(75, 23);
             this.btn_Tester.TabIndex = 8;
@@ -143,12 +143,27 @@ namespace Tester
             this.btn_Tester.Visible = false;
             this.btn_Tester.Click += new System.EventHandler(this.btn_Tester_Click);
             // 
+            // btn_abrirReporte
+            // 
+            this.btn_abrirReporte.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btn_abrirReporte.Enabled = false;
+            this.btn_abrirReporte.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_abrirReporte.ForeColor = System.Drawing.Color.White;
+            this.btn_abrirReporte.Location = new System.Drawing.Point(215, 282);
+            this.btn_abrirReporte.Name = "btn_abrirReporte";
+            this.btn_abrirReporte.Size = new System.Drawing.Size(175, 35);
+            this.btn_abrirReporte.TabIndex = 9;
+            this.btn_abrirReporte.Text = "Abrir Reporte";
+            this.btn_abrirReporte.UseVisualStyleBackColor = false;
+            this.btn_abrirReporte.Click += new System.EventHandler(this.btn_abrirReporte_Click);
+            // 
             // FrmReportePacientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(435, 408);
+            this.ClientSize = new System.Drawing.Size(406, 350);
+            this.Controls.Add(this.btn_abrirReporte);
             this.Controls.Add(this.btn_Tester);
             this.Controls.Add(this.lbl_cargando);
             this.Controls.Add(this.label2);
@@ -179,5 +194,6 @@ namespace Tester
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label lbl_cargando;
         private System.Windows.Forms.Button btn_Tester;
+        private System.Windows.Forms.Button btn_abrirReporte;
     }
 }
