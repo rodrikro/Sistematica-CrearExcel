@@ -13,7 +13,7 @@ namespace OfficeInterceptor.Models
     {
         DBConnectClass _db = null;
 
-        public InfoDB(string src = "C:/CS/CardioSys.mdb", string pwd = "sfa080808528", string user = "sf") 
+        public InfoDB(string src = "C:/SF/CardioSys/CardioSys.mdb", string pwd = "sfa080808528", string user = "sf") 
         {
             this._db = new DBConnectClass(src, pwd, user);
         }

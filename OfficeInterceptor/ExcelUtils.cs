@@ -34,7 +34,7 @@ namespace OfficeInterceptor
             string rutaExcel = "";
 
             //Para no batallar en debug
-            srcDB = string.IsNullOrEmpty(srcDB) ? "C:/CS/CardioSys.mdb" : srcDB;
+            srcDB = string.IsNullOrEmpty(srcDB) ? "C:/SF/CardioSys/CardioSys.mdb" : srcDB;
             pwdDB = string.IsNullOrEmpty(pwdDB) ? "sfa080808528" : pwdDB;
 
             InfoDB info = new InfoDB(srcDB, pwdDB);
