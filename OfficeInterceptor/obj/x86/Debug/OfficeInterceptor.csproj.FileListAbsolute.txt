@@ -1,0 +1,14 @@
+C:\Users\Rodrigo-MK\Documents\Repos\system\Sistematica-CrearExcel\OfficeInterceptor\bin\x86\Debug\OfficeInterceptor.dll
+C:\Users\Rodrigo-MK\Documents\Repos\system\Sistematica-CrearExcel\OfficeInterceptor\bin\x86\Debug\OfficeInterceptor.pdb
+C:\Users\Rodrigo-MK\Documents\Repos\system\Sistematica-CrearExcel\OfficeInterceptor\bin\x86\Debug\ClosedXML.dll
+C:\Users\Rodrigo-MK\Documents\Repos\system\Sistematica-CrearExcel\OfficeInterceptor\bin\x86\Debug\DocumentFormat.OpenXml.dll
+C:\Users\Rodrigo-MK\Documents\Repos\system\Sistematica-CrearExcel\OfficeInterceptor\bin\x86\Debug\ExcelNumberFormat.dll
+C:\Users\Rodrigo-MK\Documents\Repos\system\Sistematica-CrearExcel\OfficeInterceptor\bin\x86\Debug\ClosedXML.pdb
+C:\Users\Rodrigo-MK\Documents\Repos\system\Sistematica-CrearExcel\OfficeInterceptor\bin\x86\Debug\ClosedXML.xml
+C:\Users\Rodrigo-MK\Documents\Repos\system\Sistematica-CrearExcel\OfficeInterceptor\bin\x86\Debug\DocumentFormat.OpenXml.xml
+C:\Users\Rodrigo-MK\Documents\Repos\system\Sistematica-CrearExcel\OfficeInterceptor\bin\x86\Debug\ExcelNumberFormat.xml
+C:\Users\Rodrigo-MK\Documents\Repos\system\Sistematica-CrearExcel\OfficeInterceptor\obj\x86\Debug\OfficeInterceptor.csprojAssemblyReference.cache
+C:\Users\Rodrigo-MK\Documents\Repos\system\Sistematica-CrearExcel\OfficeInterceptor\obj\x86\Debug\OfficeInterceptor.csproj.CoreCompileInputs.cache
+C:\Users\Rodrigo-MK\Documents\Repos\system\Sistematica-CrearExcel\OfficeInterceptor\obj\x86\Debug\OfficeInterceptor.csproj.CopyComplete
+C:\Users\Rodrigo-MK\Documents\Repos\system\Sistematica-CrearExcel\OfficeInterceptor\obj\x86\Debug\OfficeInterceptor.dll
+C:\Users\Rodrigo-MK\Documents\Repos\system\Sistematica-CrearExcel\OfficeInterceptor\obj\x86\Debug\OfficeInterceptor.pdb

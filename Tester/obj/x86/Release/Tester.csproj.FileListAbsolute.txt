@@ -18,4 +18,4 @@ C:\Users\Rodrigo-MK\Documents\Repos\system\Sistematica-CrearExcel\Tester\obj\x86
 C:\Users\Rodrigo-MK\Documents\Repos\system\Sistematica-CrearExcel\Tester\obj\x86\Release\Tester.exe
 C:\Users\Rodrigo-MK\Documents\Repos\system\Sistematica-CrearExcel\Tester\obj\x86\Release\Tester.pdb
 C:\Users\Rodrigo-MK\Documents\Repos\system\Sistematica-CrearExcel\Tester\bin\x86\Release\Tester.exe.config
-C:\Users\Rodrigo-MK\Documents\Repos\system\Sistematica-CrearExcel\Tester\obj\x86\Release\Tester.csprojAssemblyReference.cache
+C:\Users\Rodrigo-MK\Documents\Repos\system\Sistematica-CrearExcel\Tester\obj\x86\Release\Tester.ConfiguracionSistema.resources

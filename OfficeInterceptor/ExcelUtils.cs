@@ -17,7 +17,11 @@ namespace OfficeInterceptor
 {
     public class ExcelUtils
     {
-        public ExcelUtils() { }
+        string _rutaGuardado = Environment.CurrentDirectory;
+        public ExcelUtils( string rutaGuardado ) 
+        {
+            this._rutaGuardado = (string.IsNullOrEmpty(rutaGuardado)) ? this._rutaGuardado : rutaGuardado;
+        }
 
         /// <summary>
         /// Obtiene una ruta en formato STRING de un fichero de excel generado por paciente.
@@ -117,7 +121,8 @@ namespace OfficeInterceptor
 
             nombreArchivo = (arrayPacientes.Length>1)? "Expedientes_" + fecha : nombreArchivo;
 
-            string pathFile = Environment.CurrentDirectory + @"\" + nombreArchivo +".xlsx";
+            //string pathFile = Environment.CurrentDirectory + @"\" + nombreArchivo +".xlsx";
+            string pathFile = this._rutaGuardado + @"\" + nombreArchivo + ".xlsx";
             string rutaExcel = "ConstruyeExcel";
 
             int row = 1, col = 1;

@@ -149,7 +149,7 @@ namespace Tester
 
         private void btn_GenExcel_Click(object sender, EventArgs e)
         {
-            ExcelUtils excel = new ExcelUtils();
+            ExcelUtils excel = new ExcelUtils("");
             string mensaje = "";
             string rutaExcel = "";
             string numeroExpediente = "0";

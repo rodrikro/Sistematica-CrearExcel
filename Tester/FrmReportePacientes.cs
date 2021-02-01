@@ -29,7 +29,6 @@ namespace Tester
 
         private void GeneraReporte()
         {
-            ExcelUtils excel = new ExcelUtils();
             string mensaje = "";
             string rutaExcel = "";
             string numeroExpediente = "0";
@@ -40,22 +39,31 @@ namespace Tester
 
             try
             {
+                // --------------------------------------------------
                 this.Segundos = 0;
                 lbl_cargando.Visible = true;
                 lbl_estatus.Text = "";
                 btn_GenerarReporte.Enabled = false;
                 btn_abrirReporte.Enabled = false;
-
+                // --------------------------------------------------
                 numeroExpediente = (string.IsNullOrEmpty(txt_NumeroExpediente.Text)) ? "0" : txt_NumeroExpediente.Text;
                 nombreMedico = (string.IsNullOrEmpty(txt_NombreMedico.Text)) ? string.Empty : txt_NombreMedico.Text;
-
+                // --------------------------------------------------
 
                 var appSettings = ConfigurationSettings.AppSettings;
                 string result = appSettings["srcDB"] ?? "C:/SF/CardioSys/CardioSys.mdb";
 
+
+                Configuration conf = ConfigurationManager.OpenExeConfiguration(Application.ExecutablePath);
+                string rutaGuardado = conf.AppSettings.Settings["rutaGuardado"].Value ?? Environment.CurrentDirectory;
+                
+                // --------------------------------------------------
+                ExcelUtils excel = new ExcelUtils(rutaGuardado);
+                // --------------------------------------------------
                 srcDB = result;
 
-
+                // --------------------------------------------------
+                // --------------------------------------------------
                 rutaExcel = excel.GeneraExcel(int.Parse(numeroExpediente), nombreMedico,
                     out mensaje, srcDB, pwdDB);
 
@@ -154,6 +162,18 @@ namespace Tester
         private void btn_abrirReporte_Click(object sender, EventArgs e)
         {
             AbrirArchivo(this._rutaExcel);
+        }
+
+        private void btntool_Tester_Click(object sender, EventArgs e)
+        {
+            Form1 frm = new Form1();
+            frm.Show();
+        }
+
+        private void btnTool_Configuracion_Click(object sender, EventArgs e)
+        {
+            ConfiguracionSistema frm = new ConfiguracionSistema();
+            frm.Show();
         }
     }
 }

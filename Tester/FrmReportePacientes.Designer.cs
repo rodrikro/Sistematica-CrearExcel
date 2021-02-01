@@ -41,6 +41,10 @@ namespace Tester
             this.lbl_cargando = new System.Windows.Forms.Label();
             this.btn_Tester = new System.Windows.Forms.Button();
             this.btn_abrirReporte = new System.Windows.Forms.Button();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.btnTool_Configuracion = new System.Windows.Forms.ToolStripLabel();
+            this.btntool_Tester = new System.Windows.Forms.ToolStripLabel();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btn_GenerarReporte
@@ -134,7 +138,7 @@ namespace Tester
             // 
             // btn_Tester
             // 
-            this.btn_Tester.Location = new System.Drawing.Point(315, 12);
+            this.btn_Tester.Location = new System.Drawing.Point(315, 28);
             this.btn_Tester.Name = "btn_Tester";
             this.btn_Tester.Size = new System.Drawing.Size(75, 23);
             this.btn_Tester.TabIndex = 8;
@@ -157,12 +161,39 @@ namespace Tester
             this.btn_abrirReporte.UseVisualStyleBackColor = false;
             this.btn_abrirReporte.Click += new System.EventHandler(this.btn_abrirReporte_Click);
             // 
+            // toolStrip1
+            // 
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnTool_Configuracion,
+            this.btntool_Tester});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(406, 25);
+            this.toolStrip1.TabIndex = 10;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // btnTool_Configuracion
+            // 
+            this.btnTool_Configuracion.Name = "btnTool_Configuracion";
+            this.btnTool_Configuracion.Size = new System.Drawing.Size(83, 22);
+            this.btnTool_Configuracion.Text = "Configuración";
+            this.btnTool_Configuracion.Click += new System.EventHandler(this.btnTool_Configuracion_Click);
+            // 
+            // btntool_Tester
+            // 
+            this.btntool_Tester.Name = "btntool_Tester";
+            this.btntool_Tester.Size = new System.Drawing.Size(37, 22);
+            this.btntool_Tester.Text = "Tester";
+            this.btntool_Tester.Visible = false;
+            this.btntool_Tester.Click += new System.EventHandler(this.btntool_Tester_Click);
+            // 
             // FrmReportePacientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(406, 350);
+            this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.btn_abrirReporte);
             this.Controls.Add(this.btn_Tester);
             this.Controls.Add(this.lbl_cargando);
@@ -177,6 +208,8 @@ namespace Tester
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cardio Sys";
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -195,5 +228,8 @@ namespace Tester
         private System.Windows.Forms.Label lbl_cargando;
         private System.Windows.Forms.Button btn_Tester;
         private System.Windows.Forms.Button btn_abrirReporte;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripLabel btnTool_Configuracion;
+        private System.Windows.Forms.ToolStripLabel btntool_Tester;
     }
 }
