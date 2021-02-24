@@ -33,6 +33,8 @@ namespace Tester
             string rutaExcel = "";
             string numeroExpediente = "0";
             string nombreMedico = string.Empty;
+            string fechaInicio = string.Empty;
+            string fechaFin = string.Empty;
 
             string srcDB = "";
             string pwdDB = "";
@@ -46,8 +48,23 @@ namespace Tester
                 btn_GenerarReporte.Enabled = false;
                 btn_abrirReporte.Enabled = false;
                 // --------------------------------------------------
-                numeroExpediente = (string.IsNullOrEmpty(txt_NumeroExpediente.Text)) ? "0" : txt_NumeroExpediente.Text;
+                numeroExpediente = (string.IsNullOrEmpty(txt_NumeroExpediente.Text)) ? "" : txt_NumeroExpediente.Text;
                 nombreMedico = (string.IsNullOrEmpty(txt_NombreMedico.Text)) ? string.Empty : txt_NombreMedico.Text;
+
+                fechaInicio = (string.IsNullOrEmpty(mtxt_FechaInicio.Text)) ? string.Empty : mtxt_FechaInicio.Text;
+                fechaFin= (string.IsNullOrEmpty(mtxt_FechaFin.Text)) ? string.Empty : mtxt_FechaFin.Text;
+
+                if (!string.IsNullOrEmpty(numeroExpediente))
+                {
+                    //Las fechas deben de ir vacias para buscar solo ese expediente
+                    fechaInicio = string.Empty;
+                    fechaFin = string.Empty;
+                }
+                else
+                {
+
+                }                
+
                 // --------------------------------------------------
 
                 var appSettings = ConfigurationSettings.AppSettings;
@@ -64,8 +81,9 @@ namespace Tester
 
                 // --------------------------------------------------
                 // --------------------------------------------------
+                numeroExpediente = (string.IsNullOrEmpty(numeroExpediente)) ? "0" : numeroExpediente;
                 rutaExcel = excel.GeneraExcel(int.Parse(numeroExpediente), nombreMedico,
-                    out mensaje, srcDB, pwdDB);
+                    out mensaje, srcDB, pwdDB, fechaInicio, fechaFin);
 
                 this._rutaExcel = rutaExcel;
 
@@ -79,9 +97,6 @@ namespace Tester
                     txt_Resultado.Text = rutaExcel;
                     btn_abrirReporte.Enabled = true;
                     AbrirArchivo(rutaExcel);
-                    
-
-
 
                 }
             }
@@ -174,6 +189,15 @@ namespace Tester
         {
             ConfiguracionSistema frm = new ConfiguracionSistema();
             frm.Show();
+        }
+
+        private void FrmReportePacientes_Load(object sender, EventArgs e)
+        {
+            DateTime fechaActual = DateTime.Now;
+
+            mtxt_FechaInicio.Text = fechaActual.ToString();
+            mtxt_FechaFin.Text = fechaActual.ToString();
+
         }
     }
 }

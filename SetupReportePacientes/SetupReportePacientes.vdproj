@@ -22,13 +22,13 @@
         "Entry"
         {
         "MsmKey" = "8:_0CCCEC233187576E4C396F0BFD0A73A1"
-        "OwnerKey" = "8:_E914E11EB31D4CE4BB593449E6ACF6C3"
+        "OwnerKey" = "8:_972D636B0E2741D5A141866A2FF9BA69"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_2BAD5101C764578800DBD4C7F0F4FF75"
-        "OwnerKey" = "8:_E914E11EB31D4CE4BB593449E6ACF6C3"
+        "OwnerKey" = "8:_972D636B0E2741D5A141866A2FF9BA69"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -40,25 +40,25 @@
         "Entry"
         {
         "MsmKey" = "8:_47E387AC4D186765CE34898C351284EE"
-        "OwnerKey" = "8:_E914E11EB31D4CE4BB593449E6ACF6C3"
+        "OwnerKey" = "8:_972D636B0E2741D5A141866A2FF9BA69"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_C6FE3E292FB338D699E7A0823E577F45"
-        "OwnerKey" = "8:_0CCCEC233187576E4C396F0BFD0A73A1"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_C6FE3E292FB338D699E7A0823E577F45"
-        "OwnerKey" = "8:_E914E11EB31D4CE4BB593449E6ACF6C3"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_E914E11EB31D4CE4BB593449E6ACF6C3"
+        "MsmKey" = "8:_972D636B0E2741D5A141866A2FF9BA69"
         "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_C6FE3E292FB338D699E7A0823E577F45"
+        "OwnerKey" = "8:_0CCCEC233187576E4C396F0BFD0A73A1"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_C6FE3E292FB338D699E7A0823E577F45"
+        "OwnerKey" = "8:_972D636B0E2741D5A141866A2FF9BA69"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -70,7 +70,7 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_E914E11EB31D4CE4BB593449E6ACF6C3"
+        "OwnerKey" = "8:_972D636B0E2741D5A141866A2FF9BA69"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -493,7 +493,7 @@
         }
         "Shortcut"
         {
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_D7AA1DDFC218455E81676DEA9F2F3E4B"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_19C5F23D4CAF45098404759064BEF704"
             {
             "Name" = "8:Reporte Pacientes"
             "Arguments" = "8:"
@@ -501,13 +501,13 @@
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
-            "Target" = "8:_E914E11EB31D4CE4BB593449E6ACF6C3"
-            "Folder" = "8:_700680A350E2479D959C0DD113DF7913"
+            "Target" = "8:_972D636B0E2741D5A141866A2FF9BA69"
+            "Folder" = "8:_19A6C1D1939343F993C98BDF476204D4"
             "WorkingFolder" = "8:_D71763CF305341C5A864F55B0E4ABD6C"
             "Icon" = "8:"
             "Feature" = "8:"
             }
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_F295B1BDBC284C999D4DDC829B69ABE0"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_B0A7921B156A403588C7CC08F3291956"
             {
             "Name" = "8:Reporte Pacientes"
             "Arguments" = "8:"
@@ -515,8 +515,8 @@
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
-            "Target" = "8:_E914E11EB31D4CE4BB593449E6ACF6C3"
-            "Folder" = "8:_19A6C1D1939343F993C98BDF476204D4"
+            "Target" = "8:_972D636B0E2741D5A141866A2FF9BA69"
+            "Folder" = "8:_700680A350E2479D959C0DD113DF7913"
             "WorkingFolder" = "8:_D71763CF305341C5A864F55B0E4ABD6C"
             "Icon" = "8:"
             "Feature" = "8:"
@@ -920,9 +920,9 @@
         }
         "ProjectOutput"
         {
-            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_E914E11EB31D4CE4BB593449E6ACF6C3"
+            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_972D636B0E2741D5A141866A2FF9BA69"
             {
-            "SourcePath" = "8:..\\Tester\\obj\\x86\\Debug\\Tester.exe"
+            "SourcePath" = "8:..\\Tester\\obj\\x86\\Release\\Tester.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_D71763CF305341C5A864F55B0E4ABD6C"

@@ -32,7 +32,8 @@ namespace OfficeInterceptor
         /// <param name="srcDB"></param>
         /// <param name="pwdDB"></param>
         /// <returns></returns>
-        public string GeneraExcel(int numeroExpediente, string nombreMedico,  out string mensaje, string srcDB, string pwdDB)
+        public string GeneraExcel(int numeroExpediente, string nombreMedico,  out string mensaje, string srcDB, string pwdDB, 
+            string fechaInicio, string fechaFin)
         {
             mensaje = "";
             string rutaExcel = "";
@@ -62,7 +63,7 @@ namespace OfficeInterceptor
 
                 //2. Generar query de la tabla
                 string numeroExpedienteStr = (numeroExpediente == 0) ? string.Empty : numeroExpediente.ToString();
-                query = info.GeneraQuery("DatosPaciente", listaColumnas.ToArray(), numeroExpedienteStr);
+                query = info.GeneraQuery("DatosPaciente", listaColumnas.ToArray(), numeroExpedienteStr, 0, fechaInicio, fechaFin);
 
                 //3. Obtener los pacientes
                 LPacientes = info.GetPacientes(query);

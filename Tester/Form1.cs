@@ -159,7 +159,7 @@ namespace Tester
                 numeroExpediente = (string.IsNullOrEmpty(txt_numeroExpediente.Text)) ? "0" : txt_numeroExpediente.Text;
 
                 rutaExcel = excel.GeneraExcel( int.Parse(numeroExpediente) , txt_NombreMedico.Text,
-                    out mensaje,"","");
+                    out mensaje,"","","","");
 
                 txt_respuesta.Text = rutaExcel;
                 botonEstatus(true);

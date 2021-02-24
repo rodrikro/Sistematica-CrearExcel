@@ -44,6 +44,12 @@ namespace Tester
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnTool_Configuracion = new System.Windows.Forms.ToolStripLabel();
             this.btntool_Tester = new System.Windows.Forms.ToolStripLabel();
+            this.mtxt_FechaInicio = new System.Windows.Forms.MaskedTextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.mtxt_FechaFin = new System.Windows.Forms.MaskedTextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,7 +58,7 @@ namespace Tester
             this.btn_GenerarReporte.BackColor = System.Drawing.Color.Lime;
             this.btn_GenerarReporte.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_GenerarReporte.ForeColor = System.Drawing.Color.White;
-            this.btn_GenerarReporte.Location = new System.Drawing.Point(17, 282);
+            this.btn_GenerarReporte.Location = new System.Drawing.Point(17, 375);
             this.btn_GenerarReporte.Name = "btn_GenerarReporte";
             this.btn_GenerarReporte.Size = new System.Drawing.Size(192, 35);
             this.btn_GenerarReporte.TabIndex = 0;
@@ -83,7 +89,7 @@ namespace Tester
             // txt_Resultado
             // 
             this.txt_Resultado.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Resultado.Location = new System.Drawing.Point(17, 222);
+            this.txt_Resultado.Location = new System.Drawing.Point(17, 315);
             this.txt_Resultado.Multiline = true;
             this.txt_Resultado.Name = "txt_Resultado";
             this.txt_Resultado.ReadOnly = true;
@@ -94,7 +100,7 @@ namespace Tester
             // 
             this.lbl_estatus.AutoSize = true;
             this.lbl_estatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_estatus.Location = new System.Drawing.Point(13, 199);
+            this.lbl_estatus.Location = new System.Drawing.Point(13, 292);
             this.lbl_estatus.Name = "lbl_estatus";
             this.lbl_estatus.Size = new System.Drawing.Size(0, 20);
             this.lbl_estatus.TabIndex = 4;
@@ -102,9 +108,9 @@ namespace Tester
             // txt_NombreMedico
             // 
             this.txt_NombreMedico.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_NombreMedico.Location = new System.Drawing.Point(278, 142);
+            this.txt_NombreMedico.Location = new System.Drawing.Point(214, 28);
             this.txt_NombreMedico.Name = "txt_NombreMedico";
-            this.txt_NombreMedico.Size = new System.Drawing.Size(75, 32);
+            this.txt_NombreMedico.Size = new System.Drawing.Size(40, 32);
             this.txt_NombreMedico.TabIndex = 5;
             this.txt_NombreMedico.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txt_NombreMedico.Visible = false;
@@ -113,7 +119,7 @@ namespace Tester
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(12, 145);
+            this.label2.Location = new System.Drawing.Point(-10, 28);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(218, 26);
             this.label2.TabIndex = 6;
@@ -129,7 +135,7 @@ namespace Tester
             // 
             this.lbl_cargando.AutoSize = true;
             this.lbl_cargando.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_cargando.Location = new System.Drawing.Point(158, 177);
+            this.lbl_cargando.Location = new System.Drawing.Point(160, 273);
             this.lbl_cargando.Name = "lbl_cargando";
             this.lbl_cargando.Size = new System.Drawing.Size(94, 17);
             this.lbl_cargando.TabIndex = 7;
@@ -153,7 +159,7 @@ namespace Tester
             this.btn_abrirReporte.Enabled = false;
             this.btn_abrirReporte.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_abrirReporte.ForeColor = System.Drawing.Color.White;
-            this.btn_abrirReporte.Location = new System.Drawing.Point(215, 282);
+            this.btn_abrirReporte.Location = new System.Drawing.Point(215, 375);
             this.btn_abrirReporte.Name = "btn_abrirReporte";
             this.btn_abrirReporte.Size = new System.Drawing.Size(175, 35);
             this.btn_abrirReporte.TabIndex = 9;
@@ -187,12 +193,77 @@ namespace Tester
             this.btntool_Tester.Visible = false;
             this.btntool_Tester.Click += new System.EventHandler(this.btntool_Tester_Click);
             // 
+            // mtxt_FechaInicio
+            // 
+            this.mtxt_FechaInicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mtxt_FechaInicio.Location = new System.Drawing.Point(175, 152);
+            this.mtxt_FechaInicio.Mask = "00/00/0000";
+            this.mtxt_FechaInicio.Name = "mtxt_FechaInicio";
+            this.mtxt_FechaInicio.Size = new System.Drawing.Size(192, 32);
+            this.mtxt_FechaInicio.TabIndex = 11;
+            this.mtxt_FechaInicio.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.mtxt_FechaInicio.ValidatingType = typeof(System.DateTime);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(38, 156);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(131, 24);
+            this.label3.TabIndex = 12;
+            this.label3.Text = "Fecha Inicio:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(38, 219);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(111, 24);
+            this.label4.TabIndex = 14;
+            this.label4.Text = "Fecha Fin:";
+            // 
+            // mtxt_FechaFin
+            // 
+            this.mtxt_FechaFin.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mtxt_FechaFin.Location = new System.Drawing.Point(175, 215);
+            this.mtxt_FechaFin.Mask = "00/00/0000";
+            this.mtxt_FechaFin.Name = "mtxt_FechaFin";
+            this.mtxt_FechaFin.Size = new System.Drawing.Size(192, 32);
+            this.mtxt_FechaFin.TabIndex = 13;
+            this.mtxt_FechaFin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(248, 187);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(123, 13);
+            this.label5.TabIndex = 15;
+            this.label5.Text = "Formato: DD/MM/AAAA";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(248, 250);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(123, 13);
+            this.label6.TabIndex = 16;
+            this.label6.Text = "Formato: DD/MM/AAAA";
+            // 
             // FrmReportePacientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(406, 350);
+            this.ClientSize = new System.Drawing.Size(406, 428);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.mtxt_FechaFin);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.mtxt_FechaInicio);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.btn_abrirReporte);
             this.Controls.Add(this.btn_Tester);
@@ -208,6 +279,7 @@ namespace Tester
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cardio Sys";
+            this.Load += new System.EventHandler(this.FrmReportePacientes_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -231,5 +303,11 @@ namespace Tester
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripLabel btnTool_Configuracion;
         private System.Windows.Forms.ToolStripLabel btntool_Tester;
+        private System.Windows.Forms.MaskedTextBox mtxt_FechaInicio;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.MaskedTextBox mtxt_FechaFin;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
     }
 }

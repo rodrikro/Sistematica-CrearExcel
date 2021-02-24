@@ -13,7 +13,9 @@ namespace OfficeInterceptor.Models
     {
         DBConnectClass _db = null;
 
-        public InfoDB(string src = "C:/SF/CardioSys/CardioSys.mdb", string pwd = "sfa080808528", string user = "sf") 
+        //C:\CS
+        //C:/SF/CardioSys/CardioSys.mdb
+        public InfoDB(string src = "C:/CS/CardioSys.mdb", string pwd = "sfa080808528", string user = "sf") 
         {
             this._db = new DBConnectClass(src, pwd, user);
         }
@@ -194,6 +196,7 @@ namespace OfficeInterceptor.Models
                         O.Nombre = item["Nombre"].ToString();
                         O.NumeroExpediente = item["NumeroExpediente"].ToString();
                         O.NSS = item["NSS"].ToString();
+                        O.FechaExpediente = DateTime.Parse(item["FechaExpediente"].ToString());
 
                         lista.Add(O);
                     }
@@ -212,7 +215,8 @@ namespace OfficeInterceptor.Models
         }
 
 
-        public string GeneraQuery(string tabla, string [] columnas, string numeroExpediente, int top = 0)
+        public string GeneraQuery(string tabla, string [] columnas, string numeroExpediente, int top = 0,
+            string fechaInicio = "", string fechaFin = "")
         {
             string query = "";
             string strColumnas = "";
@@ -233,12 +237,37 @@ namespace OfficeInterceptor.Models
 
 
             query += " FROM " + tabla;
+
             if (!string.IsNullOrEmpty(numeroExpediente) || numeroExpediente == "0")
             {
                 query += " WHERE NumeroExpediente = "+numeroExpediente;
             }
 
+            if(!string.IsNullOrEmpty(fechaInicio)  && !string.IsNullOrEmpty(fechaFin))
+            {
+                //query += " WHERE NumeroExpediente = " + numeroExpediente;
+                query += " WHERE FechaExpediente >= #" + formateaFecha(fechaInicio) +"#";
+                query += " AND FechaExpediente <= #" + formateaFecha(fechaFin) +"#";
+
+            }
+
             return query;
+        }
+
+        private string formateaFecha(string fecha)
+        {
+            //FORMATO: mm/dd/yyyy
+            string fechaInglesa = "";
+
+            var arregloFecha = fecha.Split('/');
+
+            string dia = arregloFecha[0];
+            string mes = arregloFecha[1];
+            string anio = arregloFecha[2];
+
+            fechaInglesa = mes+"/"+dia+"/"+anio;
+
+            return fechaInglesa;
         }
     }
 }
