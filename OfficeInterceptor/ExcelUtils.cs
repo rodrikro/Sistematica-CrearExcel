@@ -97,7 +97,8 @@ namespace OfficeInterceptor
                 }
 
                 //Paso 7. Construye el excel y obtiene la ruta
-                rutaExcel = ConstruyeExcel(listaResultadosPorPaciente, listaTablas, numeroExpediente, LPacientes, nombreMedico);
+                rutaExcel = ConstruyeExcel(listaResultadosPorPaciente, listaTablas, 
+                    numeroExpediente, LPacientes, nombreMedico, fechaInicio, fechaFin);
 
             }
             catch (Exception ex)
@@ -109,18 +110,22 @@ namespace OfficeInterceptor
         }
 
         private string ConstruyeExcel(List<List<DataTable>> listaResultadosPorPaciente, List<string> listaTablas, int numeroExpediente, 
-            List<PacienteClass> LPacientes, string nombreMedico)
+            List<PacienteClass> LPacientes, string nombreMedico, string fechaInicio, string fechaFin)
         {
             PacienteClass [] arrayPacientes = LPacientes.ToArray();
             var arrayResultados = listaResultadosPorPaciente.ToArray();
             //List<System.Data.DataTable>[10]
 
             //string paciente = "Exp " + numeroExpediente.ToString();
-            string fecha = DateTime.Now.Year.ToString() + "-" + DateTime.Now.Month.ToString("00") + "-" + DateTime.Now.Day.ToString("00");
+            string fecha = DateTime.Now.Year.ToString() + "-" 
+                + DateTime.Now.Month.ToString("00") + "-" 
+                + DateTime.Now.Day.ToString("00");
 
             string nombreArchivo = "Exp " + numeroExpediente + " " + arrayPacientes[0].Nombre + "_" + fecha;
 
             nombreArchivo = (arrayPacientes.Length>1)? "Expedientes_" + fecha : nombreArchivo;
+            nombreArchivo = "Reporte CardioSys del " + fechaInicio.Replace('/','-') + " al " + fechaFin.Replace('/', '-');
+
 
             //string pathFile = Environment.CurrentDirectory + @"\" + nombreArchivo +".xlsx";
             string pathFile = this._rutaGuardado + @"\" + nombreArchivo + ".xlsx";
@@ -138,7 +143,7 @@ namespace OfficeInterceptor
                     var hoja = workbook.Worksheets.Add("Reporte");
                     hoja.RowHeight = 20;
                     //Titulo 
-                    hoja.Cell(row, 3).Value = "EXPEDIENTE CLÍNICO";
+                    hoja.Cell(row, 3).Value = "Reporte CardioSys";
                     hoja.Cell(row, 3).Style.Font.Bold = true;
                     hoja.Cell(row, 3).Style.Font.FontSize = 16;
 
@@ -148,36 +153,44 @@ namespace OfficeInterceptor
                     {
                         
                         //Datos del paciente
-                        hoja.Cell(row, 1).Value = "PACIENTE: ";
+                        hoja.Cell(row, 1).Value = "EXPEDIENTE: ";
                         hoja.Cell(row, 1).Style.Font.FontSize = 14;
-                        hoja.Cell(row, 3).Value = arrayPacientes[i].Nombre;
-                        hoja.Cell(row, 3).Style.Font.FontSize = 14;
-                        hoja.Cell(row, 3).Style.Fill.BackgroundColor = XLColor.Green;
-                        hoja.Cell(row, 3).Style.Font.FontColor = XLColor.White;
+                        hoja.Cell(row, 1).Style.Fill.BackgroundColor = XLColor.Green;
+                        hoja.Cell(row, 1).Style.Font.FontColor = XLColor.White;
+                        hoja.Cell(row, 2).Value = arrayPacientes[i].NumeroExpediente;
+                        hoja.Cell(row, 2).Style.Font.FontSize = 14;
+                        
 
-                        hoja.Cell(row, 8).Value = "EXPEDIENTE: ";
+                        hoja.Cell(row, 4).Value = "PACIENTE: ";
+                        hoja.Cell(row, 4).Style.Font.FontSize = 14;
+                        hoja.Cell(row, 4).Style.Fill.BackgroundColor = XLColor.Green;
+                        hoja.Cell(row, 4).Style.Font.FontColor = XLColor.White;
+                        hoja.Cell(row, 5).Value = arrayPacientes[i].Nombre;
+                        hoja.Cell(row, 5).Style.Font.FontSize = 14;
+                        
+                        
+
+                        //row++;
+                        //Datos del Medico
+                        hoja.Cell(row, 7).Value = "MEDICO: ";
+                        hoja.Cell(row, 7).Style.Font.FontSize = 14;
+                        hoja.Cell(row, 7).Style.Fill.BackgroundColor = XLColor.Green;
+                        hoja.Cell(row, 7).Style.Font.FontColor = XLColor.White;
+
+                        hoja.Cell(row, 8).Value = arrayPacientes[i].Medico;
                         hoja.Cell(row, 8).Style.Font.FontSize = 14;
-                        hoja.Cell(row, 10).Value = arrayPacientes[i].NumeroExpediente;
+
+                        //Fecha
+                        hoja.Cell(row, 10).Value = "FECHA: ";
                         hoja.Cell(row, 10).Style.Font.FontSize = 14;
                         hoja.Cell(row, 10).Style.Fill.BackgroundColor = XLColor.Green;
                         hoja.Cell(row, 10).Style.Font.FontColor = XLColor.White;
+                        //DateTime fechaActual = DateTime.Now;
+                        //string fechaValue = fechaActual.ToString("dd MMM yyyy");
+                        hoja.Cell(row, 11).Value = arrayPacientes[i].FechaExpediente;
+                        hoja.Cell(row, 11).Style.Font.FontSize = 14;
 
-                        row++;
-                        //Datos del Medico
-                        hoja.Cell(row, 1).Value = "MEDICO: ";
-                        hoja.Cell(row, 1).Style.Font.FontSize = 14;
-                        hoja.Cell(row, 3).Value = nombreMedico;
-                        hoja.Cell(row, 3).Style.Font.FontSize = 14;
-
-                        //Fecha
-                        hoja.Cell(row, 8).Value = "FECHA: ";
-                        hoja.Cell(row, 8).Style.Font.FontSize = 14;
-                        DateTime fechaActual = DateTime.Now;
-                        string fechaValue = fechaActual.ToString("dd MMM yyyy");
-                        hoja.Cell(row, 10).Value = fechaValue;
-                        hoja.Cell(row, 10).Style.Font.FontSize = 14;
-
-                        row++;
+                        //row++;
 
                         //Inicia la escritura de las tablas
                         int contadorNombreTablas = 0;

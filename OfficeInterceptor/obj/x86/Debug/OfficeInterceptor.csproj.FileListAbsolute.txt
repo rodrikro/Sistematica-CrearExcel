@@ -11,4 +11,3 @@ C:\Users\Rodrigo-MK\Documents\Repos\system\Sistematica-CrearExcel\OfficeIntercep
 C:\Users\Rodrigo-MK\Documents\Repos\system\Sistematica-CrearExcel\OfficeInterceptor\obj\x86\Debug\OfficeInterceptor.csproj.CopyComplete
 C:\Users\Rodrigo-MK\Documents\Repos\system\Sistematica-CrearExcel\OfficeInterceptor\obj\x86\Debug\OfficeInterceptor.dll
 C:\Users\Rodrigo-MK\Documents\Repos\system\Sistematica-CrearExcel\OfficeInterceptor\obj\x86\Debug\OfficeInterceptor.pdb
-C:\Users\Rodrigo-MK\Documents\Repos\system\Sistematica-CrearExcel\OfficeInterceptor\obj\x86\Debug\OfficeInterceptor.csprojAssemblyReference.cache

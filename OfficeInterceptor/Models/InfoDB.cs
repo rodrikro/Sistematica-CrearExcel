@@ -197,6 +197,7 @@ namespace OfficeInterceptor.Models
                         O.NumeroExpediente = item["NumeroExpediente"].ToString();
                         O.NSS = item["NSS"].ToString();
                         O.FechaExpediente = DateTime.Parse(item["FechaExpediente"].ToString());
+                        O.Medico= item["Medico"].ToString();
 
                         lista.Add(O);
                     }
@@ -243,7 +244,7 @@ namespace OfficeInterceptor.Models
                 query += " WHERE NumeroExpediente = "+numeroExpediente;
             }
 
-            if(!string.IsNullOrEmpty(fechaInicio)  && !string.IsNullOrEmpty(fechaFin))
+            else if(!string.IsNullOrEmpty(fechaInicio)  && !string.IsNullOrEmpty(fechaFin))
             {
                 //query += " WHERE NumeroExpediente = " + numeroExpediente;
                 query += " WHERE FechaExpediente >= #" + formateaFecha(fechaInicio) +"#";

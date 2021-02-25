@@ -76,7 +76,7 @@
     </Reference>
     <Reference Include="OfficeInterceptor, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\OfficeInterceptor\bin\x86\Release\OfficeInterceptor.dll</HintPath>
+      <HintPath>..\OfficeInterceptor\bin\x86\Debug\OfficeInterceptor.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />

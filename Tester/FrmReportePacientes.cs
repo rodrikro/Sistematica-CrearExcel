@@ -57,8 +57,8 @@ namespace Tester
                 if (!string.IsNullOrEmpty(numeroExpediente))
                 {
                     //Las fechas deben de ir vacias para buscar solo ese expediente
-                    fechaInicio = string.Empty;
-                    fechaFin = string.Empty;
+                    //fechaInicio = string.Empty;
+                    //fechaFin = string.Empty;
                 }
                 else
                 {
