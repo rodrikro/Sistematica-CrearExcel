@@ -14,8 +14,8 @@ C:\Users\Rodrigo-MK\Documents\Repos\system\Sistematica-CrearExcel\Tester\obj\x86
 C:\Users\Rodrigo-MK\Documents\Repos\system\Sistematica-CrearExcel\Tester\obj\x86\Release\Tester.Properties.Resources.resources
 C:\Users\Rodrigo-MK\Documents\Repos\system\Sistematica-CrearExcel\Tester\obj\x86\Release\Tester.csproj.GenerateResource.cache
 C:\Users\Rodrigo-MK\Documents\Repos\system\Sistematica-CrearExcel\Tester\obj\x86\Release\Tester.csproj.CoreCompileInputs.cache
-C:\Users\Rodrigo-MK\Documents\Repos\system\Sistematica-CrearExcel\Tester\obj\x86\Release\Tester.csproj.CopyComplete
 C:\Users\Rodrigo-MK\Documents\Repos\system\Sistematica-CrearExcel\Tester\obj\x86\Release\Tester.exe
 C:\Users\Rodrigo-MK\Documents\Repos\system\Sistematica-CrearExcel\Tester\obj\x86\Release\Tester.pdb
 C:\Users\Rodrigo-MK\Documents\Repos\system\Sistematica-CrearExcel\Tester\bin\x86\Release\Tester.exe.config
 C:\Users\Rodrigo-MK\Documents\Repos\system\Sistematica-CrearExcel\Tester\obj\x86\Release\Tester.ConfiguracionSistema.resources
+C:\Users\Rodrigo-MK\Documents\Repos\system\Sistematica-CrearExcel\Tester\obj\x86\Release\Tester.csproj.CopyComplete

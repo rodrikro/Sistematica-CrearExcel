@@ -38,23 +38,22 @@ namespace OfficeInterceptor.Models
                 DataTable userTables = null;
 
 
-
-                string[] arrayTablasRestringidas = {
-                    "Clinicas",
-                    "DatosPacienteBuscar",
-                    "Ligas",
-                    "Materiales",
-                    "MaterialesBuscar",
-                    "Medicos",
-                    "NumeroClinica",
-                    "NumeroExpediente",
-                    "NumeroMaterial",
-                    "NumeroMedico",
-                    "NumeroProveedor",
-                    "Presiones2",
-                    "Proveedores",
-                    "Usuarios"
-                };
+                List<string> arrayTablasRestringidas = new List<string>();
+                arrayTablasRestringidas.Add("Clinicas");
+                arrayTablasRestringidas.Add("DatosPacienteBuscar");
+                arrayTablasRestringidas.Add("Cedula");//2022-02-02
+                arrayTablasRestringidas.Add("Ligas");
+                arrayTablasRestringidas.Add("Materiales");
+                arrayTablasRestringidas.Add("MaterialesBuscar");
+                arrayTablasRestringidas.Add("Medicos");
+                arrayTablasRestringidas.Add("NumeroClinica");
+                arrayTablasRestringidas.Add("NumeroExpediente");
+                arrayTablasRestringidas.Add("NumeroMaterial");
+                arrayTablasRestringidas.Add("NumeroMedico");
+                arrayTablasRestringidas.Add("NumeroProveedor");
+                arrayTablasRestringidas.Add("Presiones2");
+                arrayTablasRestringidas.Add("Proveedores");
+                arrayTablasRestringidas.Add("Usuarios");
 
                 string[] restrictions = new string[4];
 
@@ -67,17 +66,8 @@ namespace OfficeInterceptor.Models
                     nombreTablas.Add(userTables.Rows[i][2].ToString());
                 }
 
+                nombreTablas = nombreTablas.Where(tabla => !arrayTablasRestringidas.Any(x => tabla == x)).ToList();
 
-                for (int i = 0; i < nombreTablas.Count; i++)
-                {
-                    foreach (var restringidas in arrayTablasRestringidas)
-                    {
-                        if (nombreTablas[i] == restringidas)
-                        {
-                            nombreTablas.Remove(nombreTablas[i]);
-                        }
-                    }
-                }
 
             }
             catch (Exception ex)

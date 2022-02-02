@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using OfficeInterceptor;
 using OfficeInterceptor.Models;
 
+using System.Configuration;
+
 namespace Tester
 {
     public partial class Form1 : Form
@@ -25,13 +27,23 @@ namespace Tester
 
         private void btn_ConectaBD_Click(object sender, EventArgs e)
         {
+            var appSettings = ConfigurationSettings.AppSettings;
+            string result = appSettings["srcDB"] ?? "C:/SF/CardioSys/CardioSys.mdb";
+
             string mensaje = "";
             //public InfoDB(string src = "C:/CS/CardioSys.mdb", string user = "sf", string pwd = "sfa080808528") 
-            DBConnectClass db = new DBConnectClass("C:/CS/CardioSys.mdb", "sfa080808528");
-            
-            bool ok = db.Conecta(out mensaje);
+            //DBConnectClass db = new DBConnectClass("C:/CS/CardioSys.mdb", "sfa080808528");
+            DBConnectClass db = new DBConnectClass(result, "sfa080808528");
 
-            botonEstatus(ok);
+            try
+            {
+                bool ok = db.Conecta(out mensaje);
+                botonEstatus(ok);
+            }
+            catch (Exception ex)
+            {
+
+            }
             //MessageBox.Show(ok.ToString()+" /mensaje:\n"+mensaje, "Conexion", MessageBoxButtons.OK, MessageBoxIcon.Information);
             txt_respuesta.Text = "";
             txt_respuesta.Text = mensaje;

@@ -22,13 +22,13 @@
         "Entry"
         {
         "MsmKey" = "8:_0CCCEC233187576E4C396F0BFD0A73A1"
-        "OwnerKey" = "8:_972D636B0E2741D5A141866A2FF9BA69"
+        "OwnerKey" = "8:_5BF8ABD8E6D5466F9459D9BB33BB200D"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_2BAD5101C764578800DBD4C7F0F4FF75"
-        "OwnerKey" = "8:_972D636B0E2741D5A141866A2FF9BA69"
+        "OwnerKey" = "8:_5BF8ABD8E6D5466F9459D9BB33BB200D"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -40,12 +40,12 @@
         "Entry"
         {
         "MsmKey" = "8:_47E387AC4D186765CE34898C351284EE"
-        "OwnerKey" = "8:_972D636B0E2741D5A141866A2FF9BA69"
+        "OwnerKey" = "8:_5BF8ABD8E6D5466F9459D9BB33BB200D"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_972D636B0E2741D5A141866A2FF9BA69"
+        "MsmKey" = "8:_5BF8ABD8E6D5466F9459D9BB33BB200D"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -58,19 +58,13 @@
         "Entry"
         {
         "MsmKey" = "8:_C6FE3E292FB338D699E7A0823E577F45"
-        "OwnerKey" = "8:_972D636B0E2741D5A141866A2FF9BA69"
+        "OwnerKey" = "8:_5BF8ABD8E6D5466F9459D9BB33BB200D"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_47E387AC4D186765CE34898C351284EE"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_972D636B0E2741D5A141866A2FF9BA69"
+        "OwnerKey" = "8:_5BF8ABD8E6D5466F9459D9BB33BB200D"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -89,6 +83,12 @@
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_C6FE3E292FB338D699E7A0823E577F45"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_47E387AC4D186765CE34898C351284EE"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -373,7 +373,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:ReportePacientes"
         "ProductCode" = "8:{54781F69-3EC5-46FB-8347-9BEC22391EB2}"
-        "PackageCode" = "8:{2821F15E-10E9-4091-AC93-4F7120998A72}"
+        "PackageCode" = "8:{1C4BB61A-B161-4693-9436-19E56AC91935}"
         "UpgradeCode" = "8:{BB6BED9A-03A3-4C38-B76D-579CEB44DD29}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -493,30 +493,30 @@
         }
         "Shortcut"
         {
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_19C5F23D4CAF45098404759064BEF704"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_1E8E7499EC7A4C54B3056A25D0D67D20"
             {
-            "Name" = "8:Reporte Pacientes"
+            "Name" = "8:Reporte CardioSys"
             "Arguments" = "8:"
             "Description" = "8:"
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
-            "Target" = "8:_972D636B0E2741D5A141866A2FF9BA69"
-            "Folder" = "8:_19A6C1D1939343F993C98BDF476204D4"
+            "Target" = "8:_5BF8ABD8E6D5466F9459D9BB33BB200D"
+            "Folder" = "8:_700680A350E2479D959C0DD113DF7913"
             "WorkingFolder" = "8:_D71763CF305341C5A864F55B0E4ABD6C"
             "Icon" = "8:"
             "Feature" = "8:"
             }
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_B0A7921B156A403588C7CC08F3291956"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_7BB408D28D304218B642AF02FE6C28A8"
             {
-            "Name" = "8:Reporte Pacientes"
+            "Name" = "8:Reporte CardioSys"
             "Arguments" = "8:"
             "Description" = "8:"
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
-            "Target" = "8:_972D636B0E2741D5A141866A2FF9BA69"
-            "Folder" = "8:_700680A350E2479D959C0DD113DF7913"
+            "Target" = "8:_5BF8ABD8E6D5466F9459D9BB33BB200D"
+            "Folder" = "8:_19A6C1D1939343F993C98BDF476204D4"
             "WorkingFolder" = "8:_D71763CF305341C5A864F55B0E4ABD6C"
             "Icon" = "8:"
             "Feature" = "8:"
@@ -920,7 +920,7 @@
         }
         "ProjectOutput"
         {
-            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_972D636B0E2741D5A141866A2FF9BA69"
+            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_5BF8ABD8E6D5466F9459D9BB33BB200D"
             {
             "SourcePath" = "8:..\\Tester\\obj\\x86\\Release\\Tester.exe"
             "TargetName" = "8:"
